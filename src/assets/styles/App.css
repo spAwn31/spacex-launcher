@@ -103,6 +103,7 @@ body {
 }
 
 .btn {
+    cursor: pointer;
     display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -200,16 +201,19 @@ body {
 
 @media only screen  and (min-width : 1224px) {
     .App-filter-card-container {
-        flex: 4;
-        max-width: 25%;
+        flex: 1;
+        max-width: 20%;
     }
     .mission-container {
-        flex: 2;
-        max-width: 75%;
+        flex: 1;
+        max-width: 100%;
     }
     .mission-column {
-        flex: 2;
-        max-width: 33.333333%;
+        flex: 1;
+        max-width: 20%;
+    }
+    .mission-details {
+        width: 13rem;
     }
 }
 
