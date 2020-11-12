@@ -14,6 +14,10 @@ export default class App extends Component {
         super(props);
         this.state = {
             isLoaded: false,
+            launch_success_true: false,
+            launch_success_false: false,
+            land_success_true: false,
+            land_success_false: false,
             filters: {
                 limit: 100,
                 launch_year: undefined,
@@ -44,7 +48,14 @@ export default class App extends Component {
     updateFilters(type, value) {
         if (this.state.filters[type] === value) {
             value = undefined;
+            this.setState({
+                launch_success_true: false,
+                launch_success_false: false,
+                land_success_true: false,
+                land_success_false: false
+            })
         }
+
         const filters = {
             ...this.state.filters,
             [type]: value,
@@ -54,18 +65,30 @@ export default class App extends Component {
 
     updateLaunchButtonClass = value => {
         let className = "App-filter-button ";
-        className += (this.state.filters.launch_year === value.toString() ||
-                        this.state.filters.launch_success === value ||
-                        this.state.filters.land_success === value ?
+        className += (this.state.filters.launch_year === value.toString() ?
                         "success" : "outline-success");
         return className
     }
 
     updateSuccessButtonClass = () => {
         let className = "App-filter-button ";
-        className += (this.state.filters.land_success === "true" || this.state.filters.launch_success === "false"
-        || this.state.filters.launch_success === "true" || this.state.filters.land_success === "false"
-            ? "success" : "outline-success");
+        if(this.state.filters.land_success === "true") {
+            console.log("1")
+            className += "success-land-true"
+        } else if(this.state.filters.land_success === "false") {
+            console.log("2")
+            className += "success-land-false"
+        } else if(this.state.filters.launch_success === "true") {
+            console.log("3")
+            className += "success-launch-true"
+        } else if(this.state.filters.launch_success === "false") {
+            console.log("4")
+            className += "success-launch-false"
+        } else {
+            console.log("5")
+            className += "outline-success"
+        }
+        console.log("6")
         return className;
     }
 
