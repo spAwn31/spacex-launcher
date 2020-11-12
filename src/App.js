@@ -52,7 +52,7 @@ export default class App extends Component {
     }
 
     updateLaunchButtonClass = value => {
-        let className = "App-filter-button ";
+        let className = "App-filter-button btn ";
         className += (this.state.filters.launch_year === value.toString() ?
                         "success" : "outline-success");
         return className
@@ -116,8 +116,8 @@ export default class App extends Component {
                                         <div className="App-filter-button-container">
                                             <button
                                                 className={this.state.filters.launch_success === "true"
-                                                    ? "App-filter-button success" :
-                                                    "App-filter-button outline-success"}
+                                                    ? "App-filter-button btn success" :
+                                                    "App-filter-button btn outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters(
                                                         "launch_success",
@@ -131,8 +131,8 @@ export default class App extends Component {
 
                                             <button
                                                 className={this.state.filters.launch_success === "false"
-                                                    ? "App-filter-button success" :
-                                                    "App-filter-button outline-success"}
+                                                    ? "App-filter-button btn success" :
+                                                    "App-filter-button btn outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters(
                                                         "launch_success",
@@ -152,8 +152,8 @@ export default class App extends Component {
                                         <div className="App-filter-button-container">
                                             <button
                                                 className={this.state.filters.land_success === "true"
-                                                    ? "App-filter-button success" :
-                                                    "App-filter-button outline-success"}
+                                                    ? "App-filter-button btn success" :
+                                                    "App-filter-button btn outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters("land_success", e.target.value)
                                                 }
@@ -164,8 +164,8 @@ export default class App extends Component {
 
                                             <button
                                                 className={this.state.filters.land_success === "false"
-                                                    ? "App-filter-button success" :
-                                                    "App-filter-button outline-success"}
+                                                    ? "App-filter-button btn success" :
+                                                    "App-filter-button btn outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters("land_success", e.target.value)
                                                 }
