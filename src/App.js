@@ -113,7 +113,7 @@ export default class App extends Component {
                                             <hr className="App-filters-hr"/>
                                         </p>
 
-                                        <div className="App-filter-button-container">
+                                        <div className="App-filter-button-container" style={{paddingLeft: "0px"}}>
                                             <button
                                                 className={this.state.filters.launch_success === "true"
                                                     ? "App-filter-button btn success" :
@@ -149,7 +149,7 @@ export default class App extends Component {
                                             Successful Landing
                                             <hr className="App-filters-hr"/>
                                         </p>
-                                        <div className="App-filter-button-container">
+                                        <div className="App-filter-button-container" style={{paddingLeft: "0px"}}>
                                             <button
                                                 className={this.state.filters.land_success === "true"
                                                     ? "App-filter-button btn success" :
