@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import MissionDetails from "./components/MissionDetails";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-// import {Container, Card, Button, Row, Col} from 'react-bootstrap';
 import querystring from 'querystring';
 import './assets/styles/App.css';
 import loader from './assets/images/loading.png';
@@ -14,10 +12,6 @@ export default class App extends Component {
         super(props);
         this.state = {
             isLoaded: false,
-            launch_success_true: false,
-            launch_success_false: false,
-            land_success_true: false,
-            land_success_false: false,
             filters: {
                 limit: 100,
                 launch_year: undefined,
@@ -48,12 +42,6 @@ export default class App extends Component {
     updateFilters(type, value) {
         if (this.state.filters[type] === value) {
             value = undefined;
-            this.setState({
-                launch_success_true: false,
-                launch_success_false: false,
-                land_success_true: false,
-                land_success_false: false
-            })
         }
 
         const filters = {
@@ -68,28 +56,6 @@ export default class App extends Component {
         className += (this.state.filters.launch_year === value.toString() ?
                         "success" : "outline-success");
         return className
-    }
-
-    updateSuccessButtonClass = () => {
-        let className = "App-filter-button ";
-        if(this.state.filters.land_success === "true") {
-            console.log("1")
-            className += "success-land-true"
-        } else if(this.state.filters.land_success === "false") {
-            console.log("2")
-            className += "success-land-false"
-        } else if(this.state.filters.launch_success === "true") {
-            console.log("3")
-            className += "success-launch-true"
-        } else if(this.state.filters.launch_success === "false") {
-            console.log("4")
-            className += "success-launch-false"
-        } else {
-            console.log("5")
-            className += "outline-success"
-        }
-        console.log("6")
-        return className;
     }
 
     render() {
@@ -111,7 +77,7 @@ export default class App extends Component {
                     <div className="container-fluid">
                         <div className="row">
                             <div className="card-container">
-                                <div className="App-filter-card card">
+                                <div className="App-filter-card">
                                     <div className="card-body">
                                         <div className="App-filter-header">
                                             <h5>Filters</h5>
@@ -149,7 +115,9 @@ export default class App extends Component {
 
                                         <div className="App-filter-button-container">
                                             <button
-                                                className={this.updateSuccessButtonClass()}
+                                                className={this.state.filters.launch_success === "true"
+                                                    ? "App-filter-button success" :
+                                                    "App-filter-button outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters(
                                                         "launch_success",
@@ -162,7 +130,9 @@ export default class App extends Component {
                                             </button>
 
                                             <button
-                                                className={this.updateSuccessButtonClass()}
+                                                className={this.state.filters.launch_success === "false"
+                                                    ? "App-filter-button success" :
+                                                    "App-filter-button outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters(
                                                         "launch_success",
@@ -181,7 +151,9 @@ export default class App extends Component {
                                         </p>
                                         <div className="App-filter-button-container">
                                             <button
-                                                className={this.updateSuccessButtonClass()}
+                                                className={this.state.filters.land_success === "true"
+                                                    ? "App-filter-button success" :
+                                                    "App-filter-button outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters("land_success", e.target.value)
                                                 }
@@ -191,7 +163,9 @@ export default class App extends Component {
                                             </button>
 
                                             <button
-                                                className={this.updateSuccessButtonClass()}
+                                                className={this.state.filters.land_success === "false"
+                                                    ? "App-filter-button success" :
+                                                    "App-filter-button outline-success"}
                                                 onClick={(e) =>
                                                     this.updateFilters("land_success", e.target.value)
                                                 }

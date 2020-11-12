@@ -46,9 +46,6 @@ body {
 .App-filter-card {
   width: 18rem;
   margin-bottom: 15px;
-}
-
-.card {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -196,29 +193,5 @@ body {
 
 .outline-success {
   color: #28a745;
-  border-color: #28a745;
-}
-
-.success-land-true {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.success-land-false {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.success-launch-true {
-  color: #fff;
-  background-color: #28a745;
-  border-color: #28a745;
-}
-
-.success-launch-false {
-  color: #fff;
-  background-color: #28a745;
   border-color: #28a745;
 }
