@@ -172,7 +172,7 @@ body {
     }
 }
 
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio : 2) {
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
     .App-filter-card-container {
         flex: 3;
         max-width: 50%;
@@ -184,7 +184,18 @@ body {
 }
 /* Desktops and laptops ----------- */
 @media only screen  and (min-width : 1224px) {
-    /* Styles */
+    .App-filter-card-container {
+        flex: 4;
+        max-width: 25%;
+    }
+    .mission-container {
+        flex: 2;
+        max-width: 75%;
+    }
+    .mission-column {
+        flex: 2;
+        max-width: 33.333333%;
+    }
 }
 
 /* Large screens ----------- */
