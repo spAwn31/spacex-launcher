@@ -76,7 +76,7 @@ export default class App extends Component {
                     <h1 className="App-header">SpaceX Launch Programs</h1>
                     <div className="container-fluid">
                         <div className="row">
-                            <div className="card-container">
+                            <div className="App-filter-card-container">
                                 <div className="App-filter-card">
                                     <div className="card-body">
                                         <div className="App-filter-header">
@@ -183,7 +183,7 @@ export default class App extends Component {
                                     {data.map((details) => {
                                         return (
                                             <div className="mission-column">
-                                                <MissionDetails details={details}/>
+                                                <MissionDetails className="mission-details" details={details}/>
                                             </div>
                                         );
                                     })}
