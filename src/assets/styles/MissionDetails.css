@@ -1,0 +1,28 @@
+.mission-details {
+    width: 18rem;
+    padding: 1rem;
+    margin-bottom: 15px;
+}
+
+.mission-image {
+    background-color: #F2F2F2;
+}
+
+.mission-name-flight-number {
+    color: #63659f;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.mission-detail-label {
+    color: #181818;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.mission-detail-value {
+    color: #63659f;
+    font-weight: 400;
+}
